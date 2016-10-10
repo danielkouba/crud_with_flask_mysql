@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+</head>
+<body>
+<h1>Friends Database</h1>
+<!-- List friends -->
+{% for friend in all_friends %}
+	<div class="dataline">
+		<p>{{ friend['first_name'] + " " + friend['last_name'] + " " + friend['occupation']}}</p>
+		<a href="/friends/{{friend['id']}}/edit"><button>Edit</button></a>
+		<a href="/friends/{{friend['id']}}/delete"><button>Delete</button></a>
+	</div>
+{% endfor %}
+
+
+<!-- add friend form -->
+	<h1>Add friend</h1>
+	<form action="/friends" method="POST">
+		First Name: <input type="text" name="first_name">
+		Last Name: <input type="text" name="last_name">
+		Occupation: <input type="text" name="occupation">
+		<input type="submit">
+	</form>
+	
+</body>
+</html>

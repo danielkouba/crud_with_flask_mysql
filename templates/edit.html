@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Edit Friend</title>
+</head>
+<body>
+	<h1>Edit friend</h1>
+	<form action="/friends/{{session['id']}}" method="POST">
+		First Name: <input type="text" name="first_name" placeholder="{{ session['first_name'] }}">
+		Last Name: <input type="text" name="last_name" placeholder="{{ session['last_name'] }}">
+		Occupation: <input type="text" name="occupation" placeholder="{{ session['occupation'] }}">
+		<input type="submit">
+	</form>
+
+</body>
+</html>
